@@ -26,7 +26,7 @@ export const Content = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: ${(props) => props.theme['base-title']};
   }
   span {

@@ -1,6 +1,10 @@
 import { Container, InputSearch, Title } from './styles'
 
-export function Search() {
+interface PropsSearch {
+  setrQ: (data: string) => void
+}
+
+export function Search({ setrQ }: PropsSearch) {
   return (
     <Container>
       <Title>
@@ -8,7 +12,10 @@ export function Search() {
         <span>6 puplicações</span>
       </Title>
 
-      <InputSearch placeholder="Buscar conteúdo" />
+      <InputSearch
+        onChange={(e) => setrQ(e.target.value)}
+        placeholder="Buscar conteúdo"
+      />
     </Container>
   )
 }

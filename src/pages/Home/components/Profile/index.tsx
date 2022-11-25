@@ -8,6 +8,7 @@ import { api } from '../../../../services/api'
 interface ProfileUser {
   name: string
   avatar_url: string
+  company: string
   bio: string
   login: string
   followers: number
@@ -15,10 +16,10 @@ interface ProfileUser {
 
 export function Profile() {
   const [user, setUser] = useState<ProfileUser>({} as ProfileUser)
-  console.log(user)
+
   useEffect(() => {
     api
-      .get('users/jarbsoncosta')
+      .get('users/diego3g')
       .then((response) => {
         setUser(response.data)
       })
@@ -42,7 +43,7 @@ export function Profile() {
             </p>
             <p>
               <MdDomain size={25} />
-              FreeLancer
+              {user.company}
             </p>
             {user.followers > 1 ? (
               <p>
