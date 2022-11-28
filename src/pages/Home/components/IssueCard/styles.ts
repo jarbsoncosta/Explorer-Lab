@@ -47,7 +47,7 @@ export const Card = styled.div`
     }
     .date {
       display: flex;
-      width: 30%;
+      width: 50%;
       justify-content: end;
       font-size: 0.875rem;
       color: ${(props) => props.theme['base-span']};

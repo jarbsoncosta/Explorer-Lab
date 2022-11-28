@@ -1,11 +1,14 @@
 import { Container, Card } from './styles'
 import { Link, useParams } from 'react-router-dom'
+import { formatDistanceToNow } from 'date-fns'
+import ptBr from 'date-fns/locale/pt-BR'
 
 interface Props {
   id: number
   title: string
   body: string
   number: number
+  created_at: Date
 }
 
 interface PropsIssueGitHub {
@@ -14,8 +17,6 @@ interface PropsIssueGitHub {
 
 export function IssueCard({ issues }: PropsIssueGitHub) {
   const limit = 145
-
-  const { issueId } = useParams()
 
   return (
     <Container>
@@ -27,7 +28,12 @@ export function IssueCard({ issues }: PropsIssueGitHub) {
                 <Link to={`/blog/${i.number}`}>{i.title} </Link>
               </div>
               <div className="date">
-                <span>Há 1 dia</span>
+                <span>
+                  {formatDistanceToNow(new Date(i.created_at), {
+                    locale: ptBr,
+                    addSuffix: true,
+                  })}
+                </span>
               </div>
             </div>
             <div className="subject">

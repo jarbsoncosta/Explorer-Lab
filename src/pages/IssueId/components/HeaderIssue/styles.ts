@@ -12,7 +12,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   background: ${(props) => props.theme['base-profile']};
-  display: flex;
+
   padding: 2rem;
   align-items: center;
   border-radius: 10px;
@@ -39,7 +39,7 @@ export const Content = styled.div`
   }
 `
 
-export const DataProfile = styled.div`
+export const DetailsIssue = styled.div`
   margin-top: 1.5rem;
   display: flex;
   gap: 1.5rem;
@@ -52,5 +52,21 @@ export const DataProfile = styled.div`
     svg {
       color: ${(props) => props.theme['base-label']};
     }
+  }
+`
+export const Navigation = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 1rem;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.75rem;
+
+    text-decoration: none;
+    color: ${(props) => props.theme.blue};
   }
 `
